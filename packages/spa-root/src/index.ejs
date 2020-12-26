@@ -36,7 +36,11 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.8.3/lib/system/single-spa.min.js",
         "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js"
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
+        "redux": "https://cdn.jsdelivr.net/npm/redux@4.0.5/dist/redux.min.js",
+        "react-redux": "https://cdn.jsdelivr.net/npm/react-redux@7.2.2/dist/react-redux.min.js",
+        "reselect": "https://cdn.jsdelivr.net/npm/reselect@4.0.0/lib/index.min.js",
+        "@reduxjs/toolkit": "https://cdn.jsdelivr.net/npm/@reduxjs/toolkit@1.5.0/dist/redux-toolkit.umd.min.js"
       }
     }
   </script>
@@ -50,7 +54,8 @@
     {
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@publicis-sapient/root-config": "//localhost:9000/publicis-sapient-root-config.js"
+        "@publicis-sapient/root-config": "//localhost:9000/publicis-sapient-root-config.js",
+        "@publicis-sapient/spa-navbar": "//localhost:8080/publicis-sapient-spa-navbar.js"
       }
     }
   </script>
@@ -74,9 +79,9 @@
 
   <template id="spa-layout">
     <single-spa-router>
-      <!-- <nav>
-        <application name="@<%- orgName %>/navbar"></application>
-      </nav> -->
+      <nav>
+        <application name="@<%- orgName %>/spa-navbar"></application>
+      </nav>
       <main>
         <route default>
           <application name="@single-spa/welcome"></application>
