@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 import singleSpaReact from "single-spa-react";
-import Root from "./root.component";
+import App from "./App";
 import configureStore from "./store";
 
 // Read the state sent with markup
@@ -14,19 +13,15 @@ delete window.__SPA_NAV_STATE__;
 // reproduce the store used to render the page on server
 const store = configureStore(state);
 
-// App Component
-const App = (props) => {
-  return (
-    <Provider store={store}>
-      <Root {...props} />
-    </Provider>
-  );
+// Root Component
+const Root = (props) => {
+  return <App store={store} {...props} />;
 };
 
 const lifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: App,
+  rootComponent: Root,
   errorBoundary(err, info, props) {
     // Customize the root error boundary for your microfrontend here.
     return null;

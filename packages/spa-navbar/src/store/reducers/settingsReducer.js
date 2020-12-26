@@ -1,19 +1,19 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { updateAppName, resetAppName } from "../actions/settingsActions";
+import { increment, decrement } from "../actions/settingsActions";
 /** Constants */
-const APP_NAME = "SPA NAVBAR";
+const APP_NAME = "SPA_NAVBAR";
 /** Create Reducer */
 export default createReducer(
   {
-    name: APP_NAME,
+    counter: 0,
   },
   (builder) => {
     builder
-      .addCase(updateAppName, (state, action) => {
-        state.name = `${APP_NAME} - ${action.payload}`;
+      .addCase(increment, (state, action) => {
+        state.counter += action.payload;
       })
-      .addCase(resetAppName, (state, action) => {
-        state.name = APP_NAME;
+      .addCase(decrement, (state, action) => {
+        state.counter -= action.payload;
       })
       .addDefaultCase((state, action) => {});
   }

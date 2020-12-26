@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 
-export const getSettingsAppName = createSelector(
+export const getSettingsCounter = createSelector(
   (state) => state.settings,
-  (settings) => settings.name
+  (settings) => settings.counter
 );

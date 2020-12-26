@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
 
 /** Create Actions */
-export const updateAppName = createAction("settings/updateAppName");
-export const resetAppName = createAction("settings/resetAppName");
+export const increment = createAction("SPA_NAVBAR/increment");
+export const decrement = createAction("SPA_NAVBAR/decrement");
