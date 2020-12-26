@@ -7,8 +7,7 @@ const rootReducer = combineReducers({
 });
 
 export default function configureStore(initialState) {
-  const composeEnhancers =
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const composeEnhancers = compose;
   return createStore(
     rootReducer,
     // initialState,

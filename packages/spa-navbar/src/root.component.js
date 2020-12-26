@@ -1,22 +1,25 @@
 import React from "react";
-import { Provider } from "react-redux";
-import configureStore from "./store";
-import MainNavigation from "./components/MainNavigation";
-
-// Read the state sent with markup
-const state = window.__SPA_NAV_STATE__;
-
-// delete the state from global window object
-delete window.__SPA_NAV_STATE__;
-
-// reproduce the store used to render the page on server
-const store = configureStore(state);
+import { useSelector, useDispatch } from "react-redux";
+import { getSettingsAppName } from "./store/selectors/settingsSelector";
+import { resetAppName, updateAppName } from "./store/actions/settingsActions";
 
 export default function Root(props) {
+  const name = useSelector(getSettingsAppName);
+  const dispatch = useDispatch();
+
   return (
-    <Provider store={store}>
-      <section>{props.name} is mounted!</section>
-      <MainNavigation />
-    </Provider>
+    <div>
+      <span>
+        Package Name: {props.name}, App Name: {name}
+      </span>
+      <button onClick={() => dispatch(resetAppName())}>Reset App Name</button>
+      <button
+        onClick={() =>
+          dispatch(updateAppName(`Updated: ${new Date().getTime()}`))
+        }
+      >
+        Update App Name
+      </button>
+    </div>
   );
 }
