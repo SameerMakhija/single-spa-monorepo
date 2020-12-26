@@ -5,10 +5,10 @@ import App from "./App";
 import configureStore from "./store";
 
 // Read the state sent with markup
-const state = window.__SPA_NAV_STATE__;
+const state = window.__SPA_NAVBAR_STATE__;
 
 // delete the state from global window object
-delete window.__SPA_NAV_STATE__;
+delete window.__SPA_NAVBAR_STATE__;
 
 // reproduce the store used to render the page on server
 const store = configureStore(state);

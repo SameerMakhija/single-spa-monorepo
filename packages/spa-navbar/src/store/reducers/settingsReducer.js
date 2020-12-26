@@ -1,7 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { increment, decrement } from "../actions/settingsActions";
-/** Constants */
-const APP_NAME = "SPA_NAVBAR";
+
 /** Create Reducer */
 export default createReducer(
   {

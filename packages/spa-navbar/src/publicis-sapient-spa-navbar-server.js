@@ -15,7 +15,7 @@ export default function render(initialState, props) {
 
   return `
     <script>
-      window.__SPA_NAV_STATE__ = window.__SPA_NAV_STATE__ || ${JSON.stringify(
+      window.__SPA_NAVBAR_STATE__ = window.__SPA_NAVBAR_STATE__ || ${JSON.stringify(
         preloadedState
       )};
     </script>
