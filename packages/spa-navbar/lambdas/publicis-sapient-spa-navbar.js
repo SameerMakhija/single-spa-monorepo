@@ -2,15 +2,15 @@
 const spaNavbar = require("../dist/publicis-sapient-spa-navbar-server").default;
 const handler = async (event) => {
   try {
-    const html = spaNavbar(
+    const output = spaNavbar(
       {}, // Initial State
-      { name: "Server Rendered Name" } // Props
+      {} // Initial Props
     );
     return {
       statusCode: 200,
-      body: html,
+      body: JSON.stringify(output),
       headers: {
-        "Content-Type": "text/html; charset=UTF-8",
+        "Content-Type": "application/json",
       },
     };
   } catch (error) {

@@ -53,8 +53,7 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@publicis-sapient/root-config": "//localhost:9000/publicis-sapient-root-config.js",
+        "@publicis-sapient/root-config": "//localhost:9200/publicis-sapient-root-config.js",
         "@publicis-sapient/spa-navbar": "//localhost:8080/publicis-sapient-spa-navbar.js"
       }
     }
@@ -80,15 +79,11 @@
   <template id="spa-layout">
     <single-spa-router>
       <nav>
-        <application name="@<%- orgName %>/spa-navbar"></application>
+        <application name="@<%- orgName %>/spa-navbar" props="rootSettings"></application>
       </nav>
-      <main>
-        <route default>
-          <application name="@single-spa/welcome"></application>
-        </route>
-      </main>
     </single-spa-router>
   </template>
+  <assets></assets>
 </head>
 <body>
   <script>

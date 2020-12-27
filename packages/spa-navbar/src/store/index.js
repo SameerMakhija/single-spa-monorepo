@@ -10,7 +10,7 @@ export default function configureStore(initialState) {
   const composeEnhancers = compose;
   return createStore(
     rootReducer,
-    // initialState,
+    initialState,
     composeEnhancers(applyMiddleware(thunkMiddleware))
   );
 }

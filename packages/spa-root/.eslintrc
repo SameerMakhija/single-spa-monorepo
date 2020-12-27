@@ -1,4 +1,11 @@
 {
-  "extends": ["important-stuff", "plugin:prettier/recommended"],
-  "parser": "babel-eslint"
+	"extends": ["important-stuff", "plugin:prettier/recommended"],
+	"parser": "babel-eslint",
+	"globals": {
+		"__dirname": true,
+		"process": true
+	},
+	"rules": {
+		"no-console": "off"
+	}
 }

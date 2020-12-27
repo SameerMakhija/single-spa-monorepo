@@ -25,7 +25,7 @@ module.exports = (webpackConfigEnv, argv) => {
       plugins: [
         new HtmlWebpackPlugin({
           inject: false,
-          template: "src/index.ejs",
+          template: "src/server/views/index.ejs",
           templateParameters: {
             isLocal: webpackConfigEnv && webpackConfigEnv.isLocal === "true",
             orgName,
