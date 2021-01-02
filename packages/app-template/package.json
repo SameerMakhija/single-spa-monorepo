@@ -1,0 +1,69 @@
+{
+    "name": "@publicis-sapient/app-template",
+    "version": "0.0.1",
+    "description": "The application template for MFA using Single SPA",
+    "keywords": [
+        "microfrontend",
+        "spa",
+        "netlify",
+        "lambda",
+        "react",
+        "redux",
+        "storybook",
+        "jest"
+    ],
+    "author": "nisheed.jagadish <nisheed.jagadish@loblaw.ca>",
+    "homepage": "",
+    "license": "ISC",
+    "main": "src/client.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "lint": "eslint src --ext js",
+        "format": "prettier --write \"./**\"",
+        "test": "cross-env BABEL_ENV=test jest",
+        "watch-tests": "cross-env BABEL_ENV=test jest --watch",
+        "coverage": "cross-env BABEL_ENV=test jest --coverage"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged && concurrently yarn:test yarn:lint"
+        }
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/plugin-transform-runtime": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-react": "^7.12.10",
+        "@babel/runtime": "^7.12.5",
+        "@testing-library/jest-dom": "^5.11.8",
+        "@testing-library/react": "^11.2.2",
+        "@types/jest": "^26.0.19",
+        "@types/systemjs": "^6.1.0",
+        "babel-eslint": "^10.1.0",
+        "babel-jest": "^26.6.3",
+        "concurrently": "^5.3.0",
+        "cross-env": "^7.0.3",
+        "eslint": "^7.17.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^3.3.0",
+        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^4.3.6",
+        "jest": "^26.6.3",
+        "jest-cli": "^26.6.3",
+        "prettier": "^2.2.1",
+        "pretty-quick": "^3.1.0"
+    },
+    "dependencies": {
+        "eslint-config-prettier": "^7.1.0",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-redux": "^7.2.2",
+        "redux": "^4.0.5"
+    }
+}
