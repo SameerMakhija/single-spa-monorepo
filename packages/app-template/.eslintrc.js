@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:prettier/recommended',
+        'prettier/react',
     ],
     parser: 'babel-eslint',
     parserOptions: {
@@ -17,6 +18,9 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
     },
-    plugins: ['react'],
-    rules: {},
+    plugins: ['react', 'prettier'],
+    rules: {
+        'prettier/prettier': 'error',
+        'import/prefer-default-export': 0,
+    },
 };
