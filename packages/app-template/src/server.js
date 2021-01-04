@@ -1,11 +1,11 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import configureStore from './store';
+import createStore from './store';
 import App from './App';
 
 export default function render(initialState, props) {
     // Configure the store with the initial state provided
-    const store = configureStore(initialState);
+    const store = createStore(initialState);
 
     // render the App store static markup ins content variable
     const content = renderToString(<App store={store} {...props} />);

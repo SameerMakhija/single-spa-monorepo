@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
 import App from './App';
-import configureStore from './store';
+import createStore from './store';
 
 // Read the state sent with markup
 const state = window.APP_TEMPLATE_STATE;
@@ -11,7 +11,7 @@ const state = window.APP_TEMPLATE_STATE;
 delete window.APP_TEMPLATE_STATE;
 
 // reproduce the store used to render the page on server
-const store = configureStore(state);
+const store = createStore(state);
 
 const lifecycles = singleSpaReact({
     React,

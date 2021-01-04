@@ -1,3 +1,3 @@
-import configureStore from '../src/store';
+import createStore from '../src/store';
 
-export const mockStore = configureStore({});
+export const mockStore = createStore({});
