@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createReducer } from '@reduxjs/toolkit';
-import { increment, decrement, logCounter } from '../actions/counterActions';
+import { increment, decrement } from '../actions/counterActions';
+import { logCounter } from '../thunks/counterThunks';
 
 const initialState = { value: 0, logValue: 'Value: 0' };
 

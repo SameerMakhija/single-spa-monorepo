@@ -1,10 +1,19 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Counter from '../../src/components/Counter';
 import { mockStore } from '../test-utils';
 
 describe('Counter component', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+        jest.runOnlyPendingTimers();
+        jest.useRealTimers();
+    });
+
     it('should be in the document', () => {
         const { getByTestId } = render(
             <Provider store={mockStore}>
@@ -14,21 +23,39 @@ describe('Counter component', () => {
         expect(getByTestId('counter')).toBeInTheDocument();
     });
     it('should increment counter', () => {
-        const { getByText } = render(
+        const { getByTestId } = render(
             <Provider store={mockStore}>
                 <Counter />
             </Provider>,
         );
         fireEvent.click(screen.getByText('Increment Counter'));
-        expect(getByText('1')).toBeInTheDocument();
+        expect(getByTestId('counter-title').textContent).toEqual('1');
     });
     it('should decrement counter', () => {
-        const { getByText } = render(
+        const { getByTestId } = render(
             <Provider store={mockStore}>
                 <Counter />
             </Provider>,
         );
         fireEvent.click(screen.getByText('Decrement Counter'));
-        expect(getByText('0')).toBeInTheDocument();
+        expect(getByTestId('counter-title').textContent).toEqual('0');
+    });
+    it('should log counter pending', async () => {
+        const { getByTestId } = render(
+            <Provider store={mockStore}>
+                <Counter />
+            </Provider>,
+        );
+        expect(getByTestId('counter-subtitle').textContent).toEqual('Value: 0');
+        fireEvent.click(screen.getByText('Increment Counter'));
+        fireEvent.click(screen.getByText('Log Counter (3s Delay)'));
+        expect(getByTestId('counter-subtitle').textContent).toEqual(
+            'Value: pending',
+        );
+        await waitFor(() =>
+            expect(getByTestId('counter-subtitle').textContent).toEqual(
+                'Value: 1',
+            ),
+        );
     });
 });
