@@ -14,6 +14,7 @@ module.exports = {
         '/src/server.js',
         '(.scss|.css)$',
         '/components/.*/index.js',
+        '/__tests__/test-utils.js',
     ],
     testPathIgnorePatterns: ['/node_modules/', '__tests__/test-utils.js'],
 };
