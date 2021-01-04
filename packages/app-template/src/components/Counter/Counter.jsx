@@ -1,6 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../../store/actions/counterActions';
+import {
+    increment,
+    decrement,
+    logCounter,
+} from '../../store/actions/counterActions';
 import { getCounter } from '../../store/selectors/counterSelector';
 
 const Counter = () => {
@@ -16,6 +20,12 @@ const Counter = () => {
                 </button>
                 <button type="button" onClick={() => dispatch(decrement(1))}>
                     Decrement Counter
+                </button>
+                <button
+                    type="button"
+                    onClick={() => dispatch(logCounter(counter))}
+                >
+                    Log Counter (3s Delay)
                 </button>
             </div>
         </div>

@@ -25,5 +25,6 @@ module.exports = {
         'import/prefer-default-export': 0,
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
         'react/jsx-props-no-spreading': 0,
+        'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
     },
 };
