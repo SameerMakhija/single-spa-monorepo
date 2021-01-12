@@ -14,13 +14,9 @@ export default function render(initialState, props) {
     const preloadedState = store.getState();
 
     return {
-        assets: `
-    <script>
-      window.APP_TEMPLATE_STATE = window.APP_TEMPLATE_STATE || ${JSON.stringify(
-          preloadedState,
-      )};
-    </script>
-  `,
+        assets: `<script>window.APP_TEMPLATE_STATE = window.APP_TEMPLATE_STATE || ${JSON.stringify(
+            preloadedState,
+        )};</script>`,
         content,
     };
 }

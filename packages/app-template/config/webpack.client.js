@@ -14,7 +14,7 @@ module.exports = (webpackConfigEnv, argv) => {
         mode: opts.IS_PROD ? 'production' : 'development',
         entry: path.resolve(process.cwd(), `src/client.js`),
         output: {
-            filename: `${APP_NAMESPACE}.js`,
+            filename: `${APP_NAMESPACE}.client.js`,
             libraryTarget: 'system',
             path: path.resolve(process.cwd(), 'dist'),
             devtoolNamespace: `${APP_NAMESPACE}`,
