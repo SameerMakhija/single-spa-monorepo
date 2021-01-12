@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import Counter from './components/Counter';
+
+const Counter = React.lazy(() => import('./components/Counter'));
 
 const App = ({ store }) => (
     <Provider store={store}>
         <div className="app-template" data-testid="app-template">
-            <Counter />
+            <Suspense fallback={<div>Loading Counter...</div>}>
+                <Counter />
+            </Suspense>
         </div>
     </Provider>
 );

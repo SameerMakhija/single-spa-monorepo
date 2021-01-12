@@ -24,7 +24,9 @@
         "format": "prettier --write \"./**\"",
         "test": "cross-env BABEL_ENV=test jest",
         "watch-tests": "cross-env BABEL_ENV=test jest --watch",
-        "coverage": "cross-env BABEL_ENV=test jest --coverage"
+        "coverage": "cross-env BABEL_ENV=test jest --coverage",
+        "build:client:dev": "webpack --config config/webpack.client.js --watch",
+        "build:client:prod": "cross-env webpack --config config/webpack.client.js --mode production"
     },
     "husky": {
         "hooks": {
@@ -66,7 +68,8 @@
         "postcss-loader": "^4.1.0",
         "prettier": "^2.2.1",
         "pretty-quick": "^3.1.0",
-        "sass-loader": "^10.1.0",
+        "sass": "^1.32.2",
+        "sass-loader": "^10.1.1",
         "style-loader": "^2.0.0",
         "systemjs-webpack-interop": "^2.3.4",
         "webpack": "^5.12.3",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import Counter from '../../src/components/Counter';
+import Counter from '../../components/Counter';
 import { mockStore } from '../test-utils';
 
 describe('Counter component', () => {

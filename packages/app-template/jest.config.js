@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-    rootDir: './',
+    roots: [path.resolve(__dirname, './src')],
     transform: {
         '^.+\\.(j|t)sx?$': 'babel-jest',
     },
