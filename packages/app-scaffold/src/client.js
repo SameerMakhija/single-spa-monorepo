@@ -10,7 +10,7 @@ const state = window.APP_SCAFFOLD_STATE;
 // delete the state from global window object
 delete window.APP_SCAFFOLD_STATE;
 
-// reproduce the store used to render the page on server
+// reproduce the store used to render the page on client
 const store = createStore(state);
 
 const lifecycles = singleSpaReact({

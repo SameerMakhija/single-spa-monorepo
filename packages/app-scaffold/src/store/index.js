@@ -9,5 +9,8 @@ export default function createStore(preloadedState) {
     return configureStore({
         reducer,
         preloadedState,
+        devTools: {
+            name: 'app-scaffold',
+        },
     });
 }
