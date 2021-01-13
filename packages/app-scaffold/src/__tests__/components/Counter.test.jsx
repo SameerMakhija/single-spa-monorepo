@@ -46,15 +46,17 @@ describe('Counter component', () => {
                 <Counter />
             </Provider>,
         );
-        expect(getByTestId('counter-subtitle').textContent).toEqual('Value: 0');
-        fireEvent.click(screen.getByText('Increment Counter'));
-        fireEvent.click(screen.getByText('Log Counter (3s Delay)'));
         expect(getByTestId('counter-subtitle').textContent).toEqual(
-            'Value: pending',
+            'Log Value: 0',
+        );
+        fireEvent.click(screen.getByText('Increment Counter'));
+        fireEvent.click(screen.getByText('Log Counter (3000ms Delay)'));
+        expect(getByTestId('counter-subtitle').textContent).toEqual(
+            'Log Value: pending...',
         );
         await waitFor(() =>
             expect(getByTestId('counter-subtitle').textContent).toEqual(
-                'Value: 1',
+                'Log Value: 1',
             ),
         );
     });

@@ -19,5 +19,7 @@ module.exports = (env, argv) => ({
             'https://cdn.jsdelivr.net/npm/reselect@4.0.0/dist/reselect.min.js',
         '@reduxjs/toolkit':
             'https://cdn.jsdelivr.net/npm/@reduxjs/toolkit@1.5.0/dist/redux-toolkit.umd.min.js',
+        'pubsub-js':
+            'https://cdn.jsdelivr.net/npm/pubsub-js@1.9.2/src/pubsub.min.js',
     },
 });

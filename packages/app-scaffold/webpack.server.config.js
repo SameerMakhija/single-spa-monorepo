@@ -16,7 +16,9 @@ module.exports = (webpackConfigEnv, argv) => {
     defaultConfig.plugins = defaultConfig.plugins
         .filter((p) => p.constructor.name !== 'CleanWebpackPlugin')
         .filter((p) => p.constructor.name !== 'UnusedFilesWebpackPlugin')
-        .filter((p) => p.constructor.name !== 'SystemJSPublicPathWebpackPlugin');
+        .filter(
+            (p) => p.constructor.name !== 'SystemJSPublicPathWebpackPlugin',
+        );
 
     return webpackMerge.smart(defaultConfig, {
         // modify the webpack config however you'd like to by adding to this object

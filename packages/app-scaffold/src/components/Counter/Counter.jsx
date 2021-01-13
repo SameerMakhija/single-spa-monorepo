@@ -28,7 +28,7 @@ const Counter = () => {
                 </button>
                 <button
                     type="button"
-                    onClick={() => dispatch(logCounter({counter, delay}))}
+                    onClick={() => dispatch(logCounter({ counter, delay }))}
                 >
                     Log Counter ({delay}ms Delay)
                 </button>

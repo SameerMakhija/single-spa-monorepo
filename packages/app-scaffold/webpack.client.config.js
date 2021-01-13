@@ -13,8 +13,8 @@ module.exports = (webpackConfigEnv, argv) => {
         standaloneOptions: {
             importMap: {
                 imports: settings.EXTERNALS,
-            }
-        }
+            },
+        },
     });
 
     // Filter out unwanted OOTB plugins
