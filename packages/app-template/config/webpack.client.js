@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const SystemJSPublicPathWebpackPlugin = require('systemjs-webpack-interop/SystemJSPublicPathWebpackPlugin');
 const webpackConst = require('./webpack.constants');
@@ -66,7 +65,6 @@ module.exports = (webpackConfigEnv, argv) => {
             ],
         },
         plugins: [
-            new CleanWebpackPlugin(),
             new BundleAnalyzerPlugin({
                 analyzerMode: opts.ANALYZE_MODE,
             }),
