@@ -3,7 +3,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import { increment, decrement } from '../actions/counterActions';
 import { logCounter } from '../thunks/counterThunks';
 
-const initialState = { value: 0, logValue: 'Value: 0' };
+const initialState = { value: 0, logValue: 0 };
 
 /** Create Reducer */
 export default createReducer(initialState, (builder) => {
@@ -15,10 +15,10 @@ export default createReducer(initialState, (builder) => {
             state.value -= action.payload;
         })
         .addCase(logCounter.pending, (state) => {
-            state.logValue = 'Value: pending';
+            state.logValue = 'pending...';
         })
         .addCase(logCounter.fulfilled, (state, action) => {
-            state.logValue = `Value: ${action.payload}`;
+            state.logValue = action.payload;
         })
         .addDefaultCase(() => {});
 });

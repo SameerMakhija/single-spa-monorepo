@@ -17,7 +17,7 @@ const Counter = () => {
                 {counter}
             </h2>
             <h3 className="counter-subtitle" data-testid="counter-subtitle">
-                {logValue}
+                Log Value: {logValue}
             </h3>
             <div className="counter-btn-group">
                 <button type="button" onClick={() => dispatch(increment(1))}>
@@ -28,9 +28,9 @@ const Counter = () => {
                 </button>
                 <button
                     type="button"
-                    onClick={() => dispatch(logCounter(counter, delay))}
+                    onClick={() => dispatch(logCounter({counter, delay}))}
                 >
-                    Log Counter (3s Delay)
+                    Log Counter ({delay}ms Delay)
                 </button>
             </div>
         </div>
