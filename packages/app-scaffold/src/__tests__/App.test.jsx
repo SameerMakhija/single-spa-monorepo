@@ -18,7 +18,7 @@ describe('App component', () => {
 
     it('should render app in document', async () => {
         const { getByTestId } = render(<App store={mockStore} />);
-        const component = await getByTestId('app-template');
+        const component = await getByTestId('app-scaffold');
         expect(component).toBeInTheDocument();
     });
 });

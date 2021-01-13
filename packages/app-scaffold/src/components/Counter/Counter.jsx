@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from '../../store/actions/counterActions';
 import { logCounter } from '../../store/thunks/counterThunks';
 import { getCounter, getLogValue } from '../../store/selectors/counterSelector';
+import './Counter.scss';
 
 const Counter = () => {
     const counter = useSelector(getCounter);

@@ -4,7 +4,7 @@
         [
             "@babel/plugin-transform-runtime",
             {
-                "useESModules": false,
+                "useESModules": true,
                 "regenerator": false
             }
         ]
@@ -16,6 +16,15 @@
                     "@babel/preset-env",
                     {
                         "targets": "current node"
+                    }
+                ]
+            ],
+            "plugins": [
+                [
+                    "@babel/plugin-transform-runtime",
+                    {
+                        "useESModules": false,
+                        "regenerator": false
                     }
                 ]
             ]
