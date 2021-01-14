@@ -1,6 +1,6 @@
 module.exports = (env, argv) => ({
     // The name of the organization to which the application belongs
-    ORG_NAME: 'publicis-sapient',
+    ORG_NAME: 'app-organization',
     // The name of the application
     PROJECT_NAME: 'app-scaffold',
     // The modules that are provided by CDN and not part of the final client/server package

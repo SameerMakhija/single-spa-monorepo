@@ -1,5 +1,5 @@
 {
-    "name": "@publicis-sapient/app-scaffold",
+    "name": "@app-organization/app-scaffold",
     "scripts": {
         "start:client": "webpack-dev-serve --config=webpack.client.config.js",
         "start:client:standalone": "webpack-dev-server --config=webpack.client.config.js --env.standalone",
